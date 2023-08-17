@@ -1,9 +1,9 @@
-1. Vypočítejte rovnici Ax² + Bx + C = 0
-2. A je 100%. Kolik procent je B?
-3. Rozdíl čísel A a B vynásob podílem těchto dvou čísel
-4. Vypočítejte obsah čtverce při úhlopřícce A.
-5. Vypočítej A-tý člen geometrické řady s krokem B s prvním členem C
-6. Vypočítej derivaci funckce v Bodě A.
+1. Vypočítejte rovnici [neznama]x² + [neznama2]x + [neznama3] = 0
+2. [neznama] je 100%. Kolik procent je [neznama2]?
+3. Rozdíl čísel [neznama] a [neznama2] vynásob podílem těchto dvou čísel
+4. Vypočítejte obsah čtverce při úhlopřícce [neznama].
+5. Vypočítej [neznama]-tý člen geometrické řady s krokem [neznama2] s prvním členem [neznama3]
+6. Vypočítej derivaci funckce v Bodě [neznama].
 7. Z vygenrovaných čísel vypočítej modus.
 8. Z vygenerovaných čísel vypočítej medián.
 9. Vypočítej determinant dané matice.
