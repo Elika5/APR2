@@ -1,1 +1,12 @@
-3+5=
+Vypočítejte následující příklad: a + b = c
+Vypočítejte následující příklad: a / b = c
+Vypočítejte následující příklad: a * b = c
+
+"funkce"(vezme náhodný příklad z databáze a nahradí za neznáme):
+funkce vybrala "Vypočítejte následující příklad: a / b = c"
+Vypočítejte následující příklad: randomCislo / randomCislo = vysledek
+
+Uživatel musí zadat svujVysledek:
+pokud vysledek==svujVysledek +1 k Score
+
+nakonci program vyhodnoti Score/celkoveScore
