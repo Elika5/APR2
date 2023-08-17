@@ -1,0 +1,10 @@
+1. Vypočítejte Ax² + Bx + C = 0
+2. A je 100%. Kolik procent je b?
+3. Rozdíl čísel A a B vynásob podílem těchto dvou čísel
+4. Z vygenrovaných čísel vypočítej modus.
+5. Vypočítej A-tý člen geometrické řady s krokem B s prvním členem C
+6. Vypočítejte obsah čtverce při úhlopřícce A.
+7. Z vygenerovaných čísel vypočítej medián.
+8. Vypočítej determinant dané matice.
+9. Vypočítej skalární součin vektorů.
+10. Vypočítej derivaci funckce v Bodě A.
