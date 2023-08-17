@@ -8,3 +8,14 @@
 1.8 Při výbuchu jaderné bomby se vytvořila plynová koule, která měla teplotu asi 20 milionů kelvinů. Jaká je střední kinetická energie částic v této kouli? Boltzmannova konstanta 1,38 . 10-23 J.K-1.
 1.9 Určete práci plynu, který při stálém tlaku 0,2 MPa zvětšil objem z 0,75 m3 na 1,2 m3.
 1.10 Vypočtěte povrchovou energii kulové kapky vody o poloměru 2 mm. Povrchové napětí vody je 0,073 N∙m -1. 
+
+2.1 Rozdíl čísel 13202 a 23 vynásob podílem těchto dvou čísel
+2.2 Na dvoře je 42 dětí a chtějí se rozdělit do čtyřčlenných skupin. Kolik čtyřčlenných skupin mohou vytvořit a kolik dětí zbyde?
+2.3 Průměr kužele je 24 cm, poloměr je 12 cm. Kolik cm měří výška, jestliže je o jednu třetinu větší než poloměr kužele?
+2.4 Jaký je povrch krychle o hraně 7,2cm.
+2.5 Vypočítej, kolik m2 tapety je třeba k vytapetování místnosti o rozměrech a = 3m, b = 4m, c = 3,5m.
+2.6 Tři stejné krychle o délce hrany 3cm postavíme na sebe. Jaký je povrch vzniklého kvádru?
+2.7 Ve třídě se 40 žáky je 15 chlapců. Jaký je podíl dívek ve třídě?
+2.8 Arciděkanský kostel v Ústí nad Labem má odkloněnou věž o 186 cm. Výška věže je 65 m. Vypočítejte velikost úhlu, o který je věž vychýlena. Výsledek urči ve stupních.
+2.9 Během pěti let se snížil počet žáků ve škole ze 455 na 335. O kolik procent počet žáků poklesl?
+2.10 28 je 100%. Kolik procent je 13?
