@@ -1,1 +1,10 @@
-ulohy
+1.1 Vypočítejte jaká je rychlost světla, pokud za 0,01 s ujede vzdálenost 3000 km.
+1.2 Rychlosti dvou motorových vozidel jsou v poměru 7 : 4. Kolik kilometrů ujede za stejnou dobu pomalejší vozidlo, když rychlejší vozidlo ujede 52,5 km?
+1.3 Jaký objem v litrech má ledová kra o hmotnosti 320 kg?
+1.4 Těleso vrženo svisle vzhůru se vrátí na místo vrhu za 6 s. Do jaké výšky vystoupilo?
+1.5 Běžec dosáhne rychlosti 30 km/h po 3 sekundách od startu. Určete jeho zrychlení.
+1.6 K napětí 230 V jsou připojeny sériově tři rezistory o odporech 100 Ω, 300 Ω a 40 Ω. Jaký je celkový odpor rezistorů?
+1.7 Těleso o hmotnosti 2 kg padá z výšky 15 m do písku. Vypočítejte, jak se změní po dopadu vnitřní energie tělesa a písku.
+1.8 Při výbuchu jaderné bomby se vytvořila plynová koule, která měla teplotu asi 20 milionů kelvinů. Jaká je střední kinetická energie částic v této kouli? Boltzmannova konstanta 1,38 . 10-23 J.K-1.
+1.9 Určete práci plynu, který při stálém tlaku 0,2 MPa zvětšil objem z 0,75 m3 na 1,2 m3.
+1.10 Vypočtěte povrchovou energii kulové kapky vody o poloměru 2 mm. Povrchové napětí vody je 0,073 N∙m -1. 
