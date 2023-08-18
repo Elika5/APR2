@@ -1,4 +1,4 @@
-1. Vypočítejte rovnici [neznama]x² + [neznama]x + [neznama] = 0
+1. Vypočítejte rovnici [neznama]x² + [neznama]x + [neznama] = 0.
 2. [neznama2] je 100%. Kolik procent je [neznama2]?
 3. Z čísel [cisla] vypočítej modus.
 4. Vypočítej skalární součin vektorů [vektor], [vektor].
