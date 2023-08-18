@@ -1,10 +1,11 @@
-1. rovnice
-2. 28 je 100%. Kolik procent je 13?
-3. Rozdíl čísel 13202 a 23 vynásob podílem těchto dvou čísel
-4. Z vygenrovaných čísel dej modus.
-5. Vypočítej n-tý člen geometrické řady s krokem nějakým s prvním členem něco.
-6. Obsah čtverce pří úhlopříčce u.
-7. Z vygenrovaných čísel dej medián.
-8. determinant
-9. skalarní součin
-10. derivace v bode
+1. Vypočítejte rovnici [neznama]x² + [neznama2]x + [neznama3] = 0
+2. [neznama] je 100%. Kolik procent je [neznama2]?
+3. Rozdíl čísel [neznama] a [neznama2] vynásob podílem těchto dvou čísel
+4. Vypočítej skalární součin vektorů.
+5. Vypočítej [neznama]-tý člen geometrické řady s krokem [neznama2] s prvním členem [neznama3]
+
+1. Vypočítej derivaci funckce v Bodě [neznama].
+2. Z vygenrovaných čísel vypočítej modus.
+3. Z vygenerovaných čísel vypočítej medián.
+4. Vypočítej determinant dané matice.
+5. Vypočítejte obsah čtverce při úhlopřícce [neznama].
