@@ -1,11 +1,11 @@
 1. Vypočítejte rovnici [neznama]x² + [neznama]x + [neznama] = 0
-2. [neznama] je 100%. Kolik procent je [neznama]?
-3. Rozdíl čísel [neznama] a [neznama] vynásob podílem těchto dvou čísel
-4. Vypočítej skalární součin vektorů.
-5. Vypočítej [neznama]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama]
+2. [neznama2] je 100%. Kolik procent je [neznama2]?
+3. Z čísel [cisla] vypočítej modus.
+4. Vypočítej skalární součin vektorů [vektor], [vektor].
+5. Vypočítej [neznama3]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama]
 
-1. Vypočítej derivaci funckce v Bodě [neznama].
-2. Z vygenrovaných čísel vypočítej modus.
-3. Z vygenerovaných čísel vypočítej medián.
-4. Vypočítej determinant dané matice.
-5. Vypočítejte obsah čtverce při úhlopřícce [neznama].
+1. Vypočítej derivaci funkce x² + sin(2x) v bodě [neznama2].
+2. Rozdíl čísel [neznama2] a [neznama2] vynásob podílem těchto dvou čísel.
+3. Z čísel [cisla] vypočítej medián.
+4. Vypočítej determinant dané matice [matice].
+5. Vypočítejte obsah čtverce při úhlopřícce [neznama2].
