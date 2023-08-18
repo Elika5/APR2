@@ -10,9 +10,6 @@ class Databaze:
       
       def vyber_prikladu(self):
             radky = self.otevreni_souboru()
-            if self.typ_testu == 1:
-                  return radky[1:5]
-            else:
-                  return radky[6:10]
+            return radky[5*self.typ_testu-5:5*self.typ_testu]
             
       
