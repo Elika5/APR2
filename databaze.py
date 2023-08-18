@@ -11,5 +11,8 @@ class Databaze:
       def vyber_prikladu(self):
             radky = self.otevreni_souboru()
             return radky[5*self.typ_testu-5:5*self.typ_testu]
+
+pokus = Databaze("ulohy.txt",1)
+print(pokus)
             
       
