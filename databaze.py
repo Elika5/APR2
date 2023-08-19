@@ -12,7 +12,7 @@ class Databaze:
       
       def vyber_prikladu(self):
             radky = self.otevreni_souboru()
-            self.radky.extend(radky[5*self.typ_testu-4:5*self.typ_testu+1])
+            self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
 
 
 pokus = Databaze("ulohy.txt",2)

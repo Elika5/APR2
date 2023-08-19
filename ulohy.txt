@@ -3,7 +3,6 @@
 3. Z čísel [cisla] vypočítej modus.
 4. Vypočítej skalární součin vektorů [vektor], [vektor].
 5. Vypočítej [neznama3]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama]
-
 1. Vypočítej derivaci funkce x² + sin(2x) v bodě [neznama2].
 2. Rozdíl čísel [neznama2] a [neznama2] vynásob podílem těchto dvou čísel.
 3. Z čísel [cisla] vypočítej medián.
