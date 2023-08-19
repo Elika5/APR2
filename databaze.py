@@ -22,6 +22,7 @@ pokus = Databaze("ulohy.txt",2)
 pokus.vyber_prikladu()
 #print(pokus.radky)   
 
+"""
 class Nahrazeni:
       def __init__(self,ulohy):
             self.ulohy = ulohy
@@ -44,12 +45,48 @@ class Nahrazeni:
                         return match.group()
             
             vzor = r'\[([^\]]+)\]'
-            nahrazeni = re.sub(vzor,nahradit,self.ulohy)
+            nahrazeni = [re.sub(vzor, nahradit, uloha) for uloha in self.ulohy]
             return nahradit
 
 
 if __name__ == "__main__":
     input_text = pokus.radky
     replacer = Nahrazeni(input_text)
-    replaced_text = replacer.nahrazeni()
-    print(replaced_text)
+    replaced_text = replacer.nahrazeni()  # Volání metody nahrazeni
+    for uloha in replaced_text:
+        print(uloha)
+"""
+
+
+class Nahrazeni:
+    def __init__(self,ulohy):
+        self.ulohy = ulohy
+        self.hodnoty = []
+            
+    def hledani_vyrazu(self):
+        vzor = r'\[[^\]]+\]'
+        hledani = re.findall(vzor, self.ulohy)
+        pocet = {match: len(match.split()) for match in hledani}
+        return pocet
+      
+    def nahrazeni(self):
+        def nahradit(match):
+            tag = match.group(1)
+            if tag.startswith("neznama"):
+                return str(random.randint(1, 100))
+            elif tag.startswith("neznama2"):
+                return str(random.randint(100, 200))
+            else:
+                return match.group()
+            
+        vzor = r'\[([^\]]+)\]'
+        nahrazeni = [re.sub(vzor, nahradit, uloha) for uloha in self.ulohy]
+        return nahrazeni
+
+if __name__ == "__main__":
+    input_text = pokus.radky
+    replacer = Nahrazeni(input_text)
+    replaced_text = replacer.nahrazeni()  # Opravené jméno proměnné
+    for uloha in replaced_text:
+        print(uloha)
+
