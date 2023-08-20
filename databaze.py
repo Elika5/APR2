@@ -1,5 +1,6 @@
 import re
 import random
+import numpy as np
 
 class Databaze:
       def __init__(self,soubor,typ_testu):
@@ -37,10 +38,18 @@ class Nahrazeni:
     def nahrazeni(self):
         def nahradit(match):
             tag = match.group(1)
-            if tag.startswith("neznama"):
-                return str(random.randint(1, 100))
-            elif tag.startswith("neznama2"):
-                return str(random.randint(100, 200))
+            if tag == "neznama":
+                return str(random.randint(-11, 11))
+            elif tag == "neznama2":
+                return str(random.randint(0, 500))
+            elif tag == "matice":
+                matice = np.random.randint(-10, 10, size=(3, 3))
+                self.hodnoty.append(matice)
+                return str(matice)
+            elif tag == "cisla":
+                seznam_cisel = [random.randint(-100, 100) for _ in range(7)]
+                self.hodnoty.append(seznam_cisel)
+                return str(seznam_cisel)
             else:
                 return match.group()
             
