@@ -2,9 +2,14 @@
 2. [neznama2] je 100%. Kolik procent je [neznama2]?
 3. Z čísel [cisla] vypočítej modus.
 4. Vypočítej skalární součin vektorů [vektor], [vektor].
-5. Vypočítej [neznama3]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama]
+5. Vypočítej [neznama3]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama].
 1. Vypočítej derivaci funkce x² + sin(2x) v bodě [neznama2].
 2. Rozdíl čísel [neznama2] a [neznama2] vynásob podílem těchto dvou čísel.
 3. Z čísel [cisla] vypočítej medián.
 4. Vypočítej determinant dané matice [matice].
 5. Vypočítejte obsah čtverce při úhlopřícce [neznama2].
+1. Z čísel [cisla] vypočítej průměr.
+2. Vypočítej obsah kruhu s poloměrem [neznama].
+3. Součet čísel [neznama2] a [neznama2] přičti k jejich násobku.
+4. Kolik [neznama2] mᶟ  je to litrů?
+5. Vypočítejte rovnici [neznama]x² + [neznama]x + [neznama] = 0.
