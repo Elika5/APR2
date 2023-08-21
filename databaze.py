@@ -64,3 +64,28 @@ if __name__ == "__main__":
     for uloha in replaced_text:
         print(uloha)
 
+def vysledek(cisla,typ_testu):
+      if typ_testu == 1:
+          vysledek1 = 0
+          vysledek2 = 0
+          vysledek3 = 0
+          vysledek4 = 0
+          vysledek5 = 0
+          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+      elif typ_testu == 2:
+          vysledek1 = 0
+          vysledek2 = 0
+          vysledek3 = 0
+          vysledek4 = 0
+          vysledek5 = 0
+          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+      elif typ_testu == 3:
+          vysledek1 = 0
+          vysledek2 = 0
+          vysledek3 = 0
+          vysledek4 = 0
+          vysledek5 = 0
+          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+      else:
+          pass
+     
