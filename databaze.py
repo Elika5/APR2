@@ -2,6 +2,7 @@ import re
 import random
 import numpy as np
 import statistics
+import math
 
 class Databaze:
       def __init__(self,soubor,typ_testu):
@@ -67,11 +68,19 @@ if __name__ == "__main__":
 
 def vysledek(cisla,typ_testu):
       if typ_testu == 1:
+          det = cisla[1]*cisla[1]-4*cisla[0]*cisla[2]
           vysledek1 = 0
-          vysledek2 = 0
+          if det ==0:
+               vysledek1 = -cisla[1]/(cisla[0]*cisla[0])
+          elif det > 0:
+               vysledek1.append((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0]))
+               vysledek1.append((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0]))
+          else:
+               vysledek1 = None   
+          vysledek2 = (cisla[4]*100)/cisla[3]
           vysledek3 = statistics.mode(cisla[5])
-          vysledek4 = 0
-          vysledek5 = 0
+          vysledek4 = np.dot(cisla[6],cisla[7])
+          vysledek5 = cisla[10]*cisla[9]**(cisla[8]-1)
           return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
       elif typ_testu == 2:
           vysledek1 = 0
