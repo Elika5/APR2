@@ -21,7 +21,7 @@ class Databaze:
             self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
 
 
-pokus = Databaze("ulohy.txt",2)
+pokus = Databaze("ulohy.txt",1)
 pokus.vyber_prikladu()
 #print(pokus.radky)   
 
@@ -41,15 +41,27 @@ class Nahrazeni:
         def nahradit(match):
             tag = match.group(1)
             if tag == "neznama":
-                return str(random.randint(-11, 11))
+                hodnota1 = random.randint(-11, 11)
+                self.hodnoty.append(hodnota1)
+                return str(hodnota1)
             elif tag == "neznama2":
-                return str(random.randint(0, 500))
+                hodnota2 = random.randint(0, 500)
+                self.hodnoty.append(hodnota2)
+                return str(hodnota2)
+            elif tag == "neznama3":
+                hodnota3 = random.randint(0, 30)
+                self.hodnoty.append(hodnota3)
+                return str(hodnota3)
             elif tag == "matice":
                 matice = np.random.randint(-10, 10, size=(3, 3))
                 self.hodnoty.append(matice)
                 return str(matice)
             elif tag == "cisla":
                 seznam_cisel = [random.randint(-100, 100) for _ in range(7)]
+                self.hodnoty.append(seznam_cisel)
+                return str(seznam_cisel)
+            elif tag == "vektor":
+                seznam_cisel = [random.randint(-100, 100) for _ in range(5)]
                 self.hodnoty.append(seznam_cisel)
                 return str(seznam_cisel)
             else:
@@ -59,12 +71,7 @@ class Nahrazeni:
         nahrazeni = [re.sub(vzor, nahradit, uloha) for uloha in self.ulohy]
         return nahrazeni
 
-if __name__ == "__main__":
-    input_text = pokus.radky
-    replacer = Nahrazeni(input_text)
-    replaced_text = replacer.nahrazeni() 
-    for uloha in replaced_text:
-        print(uloha)
+
 
 def vysledek(cisla,typ_testu):
       if typ_testu == 1:
@@ -73,8 +80,8 @@ def vysledek(cisla,typ_testu):
           if det ==0:
                vysledek1 = -cisla[1]/(cisla[0]*cisla[0])
           elif det > 0:
-               vysledek1.append((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0]))
-               vysledek1.append((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0]))
+               vysledek1.append(str((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0])))
+               vysledek1.append(str((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0])))
           else:
                vysledek1 = None   
           vysledek2 = (cisla[4]*100)/cisla[3]
@@ -99,3 +106,14 @@ def vysledek(cisla,typ_testu):
       else:
           pass
      
+
+
+if __name__ == "__main__":
+    input_text = pokus.radky
+    replacer = Nahrazeni(input_text)
+    replaced_text = replacer.nahrazeni() 
+    for uloha in replaced_text:
+        print(uloha)
+    hodnoty = replacer.hodnoty
+    print(hodnoty)
+    print(vysledek(hodnoty,1))
