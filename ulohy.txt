@@ -10,6 +10,6 @@
 5. Vypočítejte obsah čtverce při úhlopřícce [neznama2].
 1. Z čísel [cisla] vypočítej průměr.
 2. Vypočítej obsah kruhu s poloměrem [neznama].
-3. Součet čísel [neznama2] a [neznama2] přičti k jejich násobku.
+3. Součet čísel [neznama2] a [neznama2] odečti od jejich součinu.
 4. Kolik [neznama2] mᶟ  je to litrů?
 5. Vypočítejte rovnici [neznama]x² + [neznama]x + [neznama] = 0.

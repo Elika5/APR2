@@ -22,7 +22,7 @@ class Databaze:
             self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
 
 
-pokus = Databaze("ulohy.txt",1)
+pokus = Databaze("ulohy.txt",3)
 pokus.vyber_prikladu()
 #print(pokus.radky)   
 
@@ -100,11 +100,19 @@ def vysledek(cisla,typ_testu):
           vysledek5 = math.sqrt(math.sqrt(cisla[5]))*math.sqrt(math.sqrt(cisla[5]))
           return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
       elif typ_testu == 3:
-          vysledek1 = 0
-          vysledek2 = 0
-          vysledek3 = 0
-          vysledek4 = 0
-          vysledek5 = 0
+          vysledek1 = np.mean(cisla[0])
+          vysledek2 = math.pi*cisla[1]*cisla[1]
+          vysledek3 = (cisla[2]+cisla[3])-(cisla[2]*cisla[3])
+          vysledek4 = cisla[4]*1000
+          det = cisla[1]*cisla[1]-4*cisla[0]*cisla[2]
+          vysledek5 = []
+          if det ==0:
+               vysledek5 = -cisla[1]/(cisla[0]*cisla[0])
+          elif det > 0:
+               vysledek5.append(str((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0])))
+               vysledek5.append(str((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0])))
+          else:
+               vysledek5 = None
           return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
       else:
           pass
@@ -119,4 +127,4 @@ if __name__ == "__main__":
         print(uloha)
     hodnoty = replacer.hodnoty
     print(hodnoty)
-    print(vysledek(hodnoty,1))
+    print(vysledek(hodnoty,3))
