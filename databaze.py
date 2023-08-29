@@ -3,6 +3,7 @@ import random
 import numpy as np
 import statistics
 import math
+import sympy
 
 class Databaze:
       def __init__(self,soubor,typ_testu):
@@ -76,7 +77,7 @@ class Nahrazeni:
 def vysledek(cisla,typ_testu):
       if typ_testu == 1:
           det = cisla[1]*cisla[1]-4*cisla[0]*cisla[2]
-          vysledek1 = 0
+          vysledek1 = []
           if det ==0:
                vysledek1 = -cisla[1]/(cisla[0]*cisla[0])
           elif det > 0:
@@ -90,11 +91,13 @@ def vysledek(cisla,typ_testu):
           vysledek5 = cisla[10]*cisla[9]**(cisla[8]-1)
           return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
       elif typ_testu == 2:
-          vysledek1 = 0
-          vysledek2 = 0
-          vysledek3 = 0
-          vysledek4 = 0
-          vysledek5 = 0
+          x = sympy.symbols("x")
+          derivace = sympy.diff(x*x + sympy.sin(2*x),x)
+          vysledek1 = derivace.evalf(subs={x: cisla[0]})
+          vysledek2 = (cisla[1]-cisla[2])*(cisla[1]/cisla[2])
+          vysledek3 = statistics.median(cisla[3])
+          vysledek4 = np.linalg.det(cisla[4])
+          vysledek5 = math.sqrt(math.sqrt(cisla[5]))*math.sqrt(math.sqrt(cisla[5]))
           return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
       elif typ_testu == 3:
           vysledek1 = 0
