@@ -104,7 +104,7 @@ def vysledek(cisla,typ_testu):
           vysledek2 = math.pi*cisla[1]*cisla[1]
           vysledek3 = (cisla[2]+cisla[3])-(cisla[2]*cisla[3])
           vysledek4 = cisla[4]*1000
-          det = cisla[1]*cisla[1]-4*cisla[0]*cisla[2]
+          det = cisla[6]*cisla[6]-4*cisla[5]*cisla[7]
           vysledek5 = []
           if det ==0:
                vysledek5 = -cisla[1]/(cisla[0]*cisla[0])
