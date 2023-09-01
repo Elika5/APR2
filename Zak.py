@@ -6,22 +6,18 @@ class Zak:
         self.soubor_nazev = f"{jmeno}_{prijmeni}.txt"
         self.znamky = {}
 
-    def hodnoceni(self,znamka):
-        self.znamky.append(znamka)
-
-    def prace_se_souborem(self):
+    def prace_se_souborem(self,nove_data):
         try:
-            with open(self.soubor_nazev, "r", encoding="UTF-8") as soubor:
+            with open(self.soubor_nazev, "a", encoding="UTF-8") as soubor:
                 obsah = soubor.read()
-                print(f"Obsah souboru {self.soubor_nazev}:")
-                print(obsah)
+                soubor.write(f", {nove_data}:{nove_data}/5")
                 self.udaje = self.obsah_na_slovnik(obsah)
         except FileNotFoundError:
-            print(f"Soubor {self.soubor_nazev} nebyl nalezen. Vytvářím nový soubor...")
             with open(self.soubor_nazev, "w", encoding="UTF-8") as soubor:
                 soubor.write(f"{self.jmeno} {self.prijmeni} - znamky a statictiky\n")
-                print(f"Nový soubor {self.soubor_nazev} byl vytvořen.")
-
+                soubor.write(f"{nove_data}:{nove_data}/5")
+                self.udaje = {nove_data:f"{nove_data}/5"}
+                
     def obsah_na_slovnik(self, obsah):
         slovnik = {}
         radky = obsah.strip().split("\n")
