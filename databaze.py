@@ -71,51 +71,57 @@ class Nahrazeni:
         vzor = r'\[([^\]]+)\]'
         nahrazeni = [re.sub(vzor, nahradit, uloha) for uloha in self.ulohy]
         return nahrazeni
+    
+    
 
 
-
-def vysledek(cisla,typ_testu):
-      if typ_testu == 1:
-          det = cisla[1]*cisla[1]-4*cisla[0]*cisla[2]
-          vysledek1 = []
-          if det ==0:
-               vysledek1 = -cisla[1]/(cisla[0]*cisla[0])
-          elif det > 0:
-               vysledek1.append(str((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0])))
-               vysledek1.append(str((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0])))
-          else:
-               vysledek1 = None   
-          vysledek2 = (cisla[4]*100)/cisla[3]
-          vysledek3 = statistics.mode(cisla[5])
-          vysledek4 = np.dot(cisla[6],cisla[7])
-          vysledek5 = cisla[10]*cisla[9]**(cisla[8]-1)
-          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
-      elif typ_testu == 2:
-          x = sympy.symbols("x")
-          derivace = sympy.diff(x*x + sympy.sin(2*x),x)
-          vysledek1 = derivace.evalf(subs={x: cisla[0]})
-          vysledek2 = (cisla[1]-cisla[2])*(cisla[1]/cisla[2])
-          vysledek3 = statistics.median(cisla[3])
-          vysledek4 = np.linalg.det(cisla[4])
-          vysledek5 = math.sqrt(math.sqrt(cisla[5]))*math.sqrt(math.sqrt(cisla[5]))
-          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
-      elif typ_testu == 3:
-          vysledek1 = np.mean(cisla[0])
-          vysledek2 = math.pi*cisla[1]*cisla[1]
-          vysledek3 = (cisla[2]+cisla[3])-(cisla[2]*cisla[3])
-          vysledek4 = cisla[4]*1000
-          det = cisla[6]*cisla[6]-4*cisla[5]*cisla[7]
-          vysledek5 = []
-          if det ==0:
-               vysledek5 = -cisla[1]/(cisla[0]*cisla[0])
-          elif det > 0:
-               vysledek5.append(str((-cisla[1]+math.sqrt(det))/(cisla[0]*cisla[0])))
-               vysledek5.append(str((-cisla[1]-math.sqrt(det))/(cisla[0]*cisla[0])))
-          else:
-               vysledek5 = None
-          return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
-      else:
-          pass
+class Vysledek:
+    def __init__(self,hodnoty,typ_testu):
+        self.hodnoty = hodnoty
+        self.typ_testu = typ_testu
+          
+    def vysledek(self):
+        if self.typ_testu == 1:
+            det = self.hodnoty[1]*self.hodnoty[1]-4*self.hodnoty[0]*self.hodnoty[2]
+            vysledek1 = []
+            if det ==0:
+                vysledek1 = -self.hodnoty[1]/(self.hodnoty[0]*self.hodnoty[0])
+            elif det > 0:
+                vysledek1.append(str((-self.hodnoty[1]+math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
+                vysledek1.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
+            else:
+                vysledek1 = None   
+            vysledek2 = (self.hodnoty[4]*100)/self.hodnoty[3]
+            vysledek3 = statistics.mode(self.hodnoty[5])
+            vysledek4 = np.dot(self.hodnoty[6],self.hodnoty[7])
+            vysledek5 = self.hodnoty[10]*self.hodnoty[9]**(self.hodnoty[8]-1)
+            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+        elif self.typ_testu == 2:
+            x = sympy.symbols("x")
+            derivace = sympy.diff(x*x + sympy.sin(2*x),x)
+            vysledek1 = derivace.evalf(subs={x: self.hodnoty[0]})
+            vysledek2 = (self.hodnoty[1]-self.hodnoty[2])*(self.hodnoty[1]/self.hodnoty[2])
+            vysledek3 = statistics.median(self.hodnoty[3])
+            vysledek4 = np.linalg.det(self.hodnoty[4])
+            vysledek5 = math.sqrt(math.sqrt(self.hodnoty[5]))*math.sqrt(math.sqrt(self.hodnoty[5]))
+            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+        elif self.typ_testu == 3:
+            vysledek1 = np.mean(self.hodnoty[0])
+            vysledek2 = math.pi*self.hodnoty[1]*self.hodnoty[1]
+            vysledek3 = (self.hodnoty[2]+self.hodnoty[3])-(self.hodnoty[2]*self.hodnoty[3])
+            vysledek4 = self.hodnoty[4]*1000
+            det = self.hodnoty[6]*self.hodnoty[6]-4*self.hodnoty[5]*self.hodnoty[7]
+            vysledek5 = []
+            if det ==0:
+                vysledek5 = -self.hodnoty[1]/(self.hodnoty[0]*self.hodnoty[0])
+            elif det > 0:
+                vysledek5.append(str((-self.hodnoty[1]+math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
+                vysledek5.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
+            else:
+                vysledek5 = None
+            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+        else:
+            pass
      
 
 
@@ -127,4 +133,6 @@ if __name__ == "__main__":
         print(uloha)
     hodnoty = replacer.hodnoty
     print(hodnoty)
-    print(vysledek(hodnoty,3))
+    vysledky = Vysledek(hodnoty,3)
+    vysledky = vysledky.vysledek()
+    print(vysledky)
