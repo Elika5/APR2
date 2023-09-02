@@ -1,6 +1,6 @@
 
 class Zak:
-    def _init__(self,jmeno,prijmeni):
+    def __init__(self,jmeno,prijmeni):
         self.jmeno = jmeno
         self.prijmeni = prijmeni
         self.soubor_nazev = f"{jmeno}_{prijmeni}.txt"
@@ -8,15 +8,19 @@ class Zak:
 
     def prace_se_souborem(self,nove_data):
         try:
-            with open(self.soubor_nazev, "a", encoding="UTF-8") as soubor:
+            with open(self.soubor_nazev, "r", encoding="UTF-8") as soubor:
                 obsah = soubor.read()
-                soubor.write(f", {nove_data}:{nove_data}/5")
-                self.udaje = self.obsah_na_slovnik(obsah)
         except FileNotFoundError:
-            with open(self.soubor_nazev, "w", encoding="UTF-8") as soubor:
-                soubor.write(f"{self.jmeno} {self.prijmeni} - znamky a statictiky\n")
+            obsah = ""
+
+        with open(self.soubor_nazev, "w", encoding="UTF-8") as soubor:
+            if obsah:
+                soubor.write(f"{obsah}, {nove_data}:{nove_data}/5")
+            else:
+                soubor.write(f"{self.jmeno} {self.prijmeni} - znamky a statistiky\n")
                 soubor.write(f"{nove_data}:{nove_data}/5")
-                self.udaje = {nove_data:f"{nove_data}/5"}
+        self.udaje = self.obsah_na_slovnik(obsah)
+        
                 
     def obsah_na_slovnik(self, obsah):
         slovnik = {}

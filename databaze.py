@@ -22,11 +22,6 @@ class Databaze:
             self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
 
 
-pokus = Databaze("ulohy.txt",3)
-pokus.vyber_prikladu()
-#print(pokus.radky)   
-
-
 class Nahrazeni:
     def __init__(self,ulohy):
         self.ulohy = ulohy
@@ -71,9 +66,7 @@ class Nahrazeni:
         vzor = r'\[([^\]]+)\]'
         nahrazeni = [re.sub(vzor, nahradit, uloha) for uloha in self.ulohy]
         return nahrazeni
-    
-    
-
+     
 
 class Vysledek:
     def __init__(self,hodnoty,typ_testu):
@@ -85,15 +78,7 @@ class Vysledek:
             return tuple(round(float(v), 2) if v is not None else None for v in cisla)
         
         if self.typ_testu == 1:
-            det = self.hodnoty[1]*self.hodnoty[1]-4*self.hodnoty[0]*self.hodnoty[2]
-            vysledek1 = []
-            if det ==0:
-                vysledek1 = -self.hodnoty[1]/(self.hodnoty[0]*self.hodnoty[0])
-            elif det > 0:
-                vysledek1.append(str((-self.hodnoty[1]+math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
-                vysledek1.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
-            else:
-                vysledek1 = 0.0   
+            vysledek1 = (self.hodnoty[0]*self.hodnoty[1]*self.hodnoty[2])/3
             vysledek2 = (self.hodnoty[4]*100)/self.hodnoty[3]
             vysledek3 = statistics.mode(self.hodnoty[5])
             vysledek4 = np.dot(self.hodnoty[6],self.hodnoty[7])
@@ -113,15 +98,7 @@ class Vysledek:
             vysledek2 = math.pi*self.hodnoty[1]*self.hodnoty[1]
             vysledek3 = (self.hodnoty[2]+self.hodnoty[3])-(self.hodnoty[2]*self.hodnoty[3])
             vysledek4 = self.hodnoty[4]*1000
-            det = self.hodnoty[6]*self.hodnoty[6]-4*self.hodnoty[5]*self.hodnoty[7]
-            vysledek5 = []
-            if det ==0:
-                vysledek5 = -self.hodnoty[6]/(self.hodnoty[5]*self.hodnoty[5])
-            elif det > 0:
-                vysledek5.append(str((-self.hodnoty[6]+math.sqrt(det))/(self.hodnoty[5]*self.hodnoty[5])))
-                vysledek5.append(str((-self.hodnoty[6]-math.sqrt(det))/(self.hodnoty[5]*self.hodnoty[5])))
-            else:
-                vysledek5 = 0.0
+            vysledek5 = math.pi*self.hodnoty[6]*(self.hodnoty[5]/2)**2
             return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         else:
             pass

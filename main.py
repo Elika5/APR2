@@ -11,8 +11,8 @@ from zak import Zak
 def main():
     zadani = input("Zadej název souboru se zadáním (př. ulohy.txt):")
     druh_testu = int(input("Zadej typ testu (1,2,3):"))
-    #jmeno = input("Zadej své jméno:")
-    #prijmeni = input("Zadej své přijmení:")
+    jmeno = input("Zadej své jméno:")
+    prijmeni = input("Zadej své přijmení:")
     data = Databaze(zadani,druh_testu)
     data.vyber_prikladu()
     radky = data.radky
@@ -20,9 +20,10 @@ def main():
     nahrazene = text.nahrazeni()
     vysledky = Vysledek(text.hodnoty,druh_testu)
     vysledky = vysledky.vysledek()
-    #student = Zak(jmeno,prijmeni)
+    student = Zak(jmeno,prijmeni)
     cisilko = 0
     uspech = 0
+    print(vysledky)
     for priklad in nahrazene:
         print(priklad)
         vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
@@ -30,7 +31,8 @@ def main():
         print(priklad2.porovnani(vysledek_studenta))
         cisilko+=1
         uspech += priklad2.uspesnost
-    print(uspech)
+    print(f"Získal jsi {uspech} a měl jsi {uspech}/5 bodů.")
+    student.prace_se_souborem(uspech)
 
 
 if __name__ == "__main__":
