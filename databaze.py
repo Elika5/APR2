@@ -81,6 +81,9 @@ class Vysledek:
         self.typ_testu = typ_testu
           
     def vysledek(self):
+        def zaokrouhleni(*cisla):
+            return tuple(round(float(v), 2) if v is not None else None for v in cisla)
+        
         if self.typ_testu == 1:
             det = self.hodnoty[1]*self.hodnoty[1]-4*self.hodnoty[0]*self.hodnoty[2]
             vysledek1 = []
@@ -95,7 +98,7 @@ class Vysledek:
             vysledek3 = statistics.mode(self.hodnoty[5])
             vysledek4 = np.dot(self.hodnoty[6],self.hodnoty[7])
             vysledek5 = self.hodnoty[10]*self.hodnoty[9]**(self.hodnoty[8]-1)
-            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+            return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         elif self.typ_testu == 2:
             x = sympy.symbols("x")
             derivace = sympy.diff(x*x + sympy.sin(2*x),x)
@@ -104,7 +107,7 @@ class Vysledek:
             vysledek3 = statistics.median(self.hodnoty[3])
             vysledek4 = np.linalg.det(self.hodnoty[4])
             vysledek5 = math.sqrt(math.sqrt(self.hodnoty[5]))*math.sqrt(math.sqrt(self.hodnoty[5]))
-            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+            return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         elif self.typ_testu == 3:
             vysledek1 = np.mean(self.hodnoty[0])
             vysledek2 = math.pi*self.hodnoty[1]*self.hodnoty[1]
@@ -119,7 +122,7 @@ class Vysledek:
                 vysledek5.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
             else:
                 vysledek5 = None
-            return vysledek1, vysledek2, vysledek3, vysledek4, vysledek5
+            return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         else:
             pass
      

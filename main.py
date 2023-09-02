@@ -21,6 +21,7 @@ def main():
     vysledky = Vysledek(text.hodnoty,druh_testu)
     vysledky = vysledky.vysledek()
     #student = Zak(jmeno,prijmeni)
+    print(vysledky)
     for priklad in nahrazene:
         print(priklad)
         vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
