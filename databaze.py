@@ -123,16 +123,3 @@ class Vysledek:
         else:
             pass
      
-
-
-if __name__ == "__main__":
-    input_text = pokus.radky
-    replacer = Nahrazeni(input_text)
-    replaced_text = replacer.nahrazeni() 
-    for uloha in replaced_text:
-        print(uloha)
-    hodnoty = replacer.hodnoty
-    print(hodnoty)
-    vysledky = Vysledek(hodnoty,3)
-    vysledky = vysledky.vysledek()
-    print(vysledky)

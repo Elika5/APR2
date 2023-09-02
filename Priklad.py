@@ -10,4 +10,4 @@ class Priklad:
         if self.vysledek == vysledek_uzivatele:
             self.uspesnost += 1
         else:
-            pass
+            print("špatně")
