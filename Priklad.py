@@ -1,4 +1,3 @@
-from databaze import *
 
 class Priklad:
 
