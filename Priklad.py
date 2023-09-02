@@ -8,6 +8,6 @@ class Priklad:
 
     def porovnani(self,vysledek_uzivatele):
         if self.vysledek == vysledek_uzivatele:
-            self.uspesnost += 1
+           self.uspesnost += 1
         else:
             print("špatně")

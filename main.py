@@ -26,6 +26,7 @@ def main():
         vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
         priklad = Priklad(text,vysledky)
         print(priklad.porovnani(vysledek_studenta))
+        print(priklad.uspesnost)
 
 
 if __name__ == "__main__":
