@@ -22,12 +22,17 @@ def main():
     vysledky = vysledky.vysledek()
     #student = Zak(jmeno,prijmeni)
     print(vysledky)
+    cisilko = 0
+    uspech = 0
     for priklad in nahrazene:
         print(priklad)
         vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
-        priklad = Priklad(text,vysledky)
-        print(priklad.porovnani(vysledek_studenta))
-        print(priklad.uspesnost)
+        priklad2 = Priklad(nahrazene[cisilko],vysledky[cisilko])
+        print(priklad2.porovnani(vysledek_studenta))
+        print(priklad2.uspesnost)
+        cisilko+=1
+        uspech += priklad2.uspesnost
+    print(uspech)
 
 
 if __name__ == "__main__":

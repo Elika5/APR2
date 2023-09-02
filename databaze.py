@@ -93,7 +93,7 @@ class Vysledek:
                 vysledek1.append(str((-self.hodnoty[1]+math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
                 vysledek1.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
             else:
-                vysledek1 = None   
+                vysledek1 = 0.0   
             vysledek2 = (self.hodnoty[4]*100)/self.hodnoty[3]
             vysledek3 = statistics.mode(self.hodnoty[5])
             vysledek4 = np.dot(self.hodnoty[6],self.hodnoty[7])
@@ -116,12 +116,12 @@ class Vysledek:
             det = self.hodnoty[6]*self.hodnoty[6]-4*self.hodnoty[5]*self.hodnoty[7]
             vysledek5 = []
             if det ==0:
-                vysledek5 = -self.hodnoty[1]/(self.hodnoty[0]*self.hodnoty[0])
+                vysledek5 = -self.hodnoty[6]/(self.hodnoty[5]*self.hodnoty[5])
             elif det > 0:
-                vysledek5.append(str((-self.hodnoty[1]+math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
-                vysledek5.append(str((-self.hodnoty[1]-math.sqrt(det))/(self.hodnoty[0]*self.hodnoty[0])))
+                vysledek5.append(str((-self.hodnoty[6]+math.sqrt(det))/(self.hodnoty[5]*self.hodnoty[5])))
+                vysledek5.append(str((-self.hodnoty[6]-math.sqrt(det))/(self.hodnoty[5]*self.hodnoty[5])))
             else:
-                vysledek5 = None
+                vysledek5 = 0.0
             return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         else:
             pass
