@@ -6,27 +6,52 @@ import math
 import sympy
 
 class Databaze:
-      def __init__(self,soubor,typ_testu):
-            self.soubor = soubor
-            self.typ_testu = typ_testu
-            self.radky = []
+    def __init__(self,soubor,typ_testu):
+        self._soubor = soubor
+        self._typ_testu = typ_testu
+        self.radky = []
 
-      def otevreni_souboru(self):
-            with open(self.soubor, "r",encoding="UTF-8") as soubor:
-                  text = soubor.readlines()
-                  text2 = [radek.strip() for radek in text]
-                  return text2
-      
-      def vyber_prikladu(self):
-            radky = self.otevreni_souboru()
-            self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
+    @property
+    def soubor(self):
+        return self._soubor
+    @soubor.setter
+    def soubor(self, novy_soubor):
+        self._soubor = novy_soubor
+
+    @property
+    def typ_testu(self):
+        return self._typ_testu
+    @typ_testu.setter
+    def typ_testu(self, novy_typ_testu):
+        self._typ_testu = novy_typ_testu
+
+    def otevreni_souboru(self):
+        try:
+            with open(self.soubor, "r", encoding="UTF-8") as soubor:
+                text = soubor.readlines()
+                text2 = [radek.strip() for radek in text]
+                return text2
+        except FileNotFoundError:
+            print(f"Soubor {self.soubor} nebyl nalezen.")
+            return []
+
+    def vyber_prikladu(self):
+        radky = self.otevreni_souboru()
+        self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
 
 
 class Nahrazeni:
     def __init__(self,ulohy):
-        self.ulohy = ulohy
+        self._ulohy = ulohy
         self.hodnoty = []
-            
+
+    @property
+    def ulohy(self):
+        return self._ulohy
+    @ulohy.setter
+    def ulohy(self, nove_ulohy):
+        self._ulohy = nove_ulohy
+
     def hledani_vyrazu(self):
         vzor = r'\[[^\]]+\]'
         hledani = re.findall(vzor, self.ulohy)
@@ -70,9 +95,23 @@ class Nahrazeni:
 
 class Vysledek:
     def __init__(self,hodnoty,typ_testu):
-        self.hodnoty = hodnoty
-        self.typ_testu = typ_testu
-          
+        self._hodnoty = hodnoty
+        self._typ_testu = typ_testu
+
+    @property
+    def hodnoty(self):
+        return self._hodnoty
+    @hodnoty.setter
+    def hodnoty(self, nove_hodnoty):
+        self._hodnoty = nove_hodnoty
+
+    @property
+    def typ_testu(self):
+        return self._typ_testu
+    @typ_testu.setter
+    def typ_testu(self, novy_typ_testu):
+        self._typ_testu = novy_typ_testu
+
     def vysledek(self):
         def zaokrouhleni(*cisla):
             return tuple(round(float(v), 2) if v is not None else None for v in cisla)

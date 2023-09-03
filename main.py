@@ -31,9 +31,8 @@ def main():
         print(priklad2.porovnani(vysledek_studenta))
         cisilko+=1
         uspech += priklad2.uspesnost
-    print(f"Získal jsi {uspech} a měl jsi {uspech}/5 bodů.")
     student.prace_se_souborem(uspech)
-
+    print(f"Získal jsi {student.ziskat_znamku()} a měl jsi {uspech}/5 bodů.")
 
 if __name__ == "__main__":
     main()
