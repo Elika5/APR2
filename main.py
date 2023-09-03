@@ -26,7 +26,13 @@ def main():
     print(vysledky)
     for priklad in nahrazene:
         print(priklad)
-        vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
+        while True:  # Nekonečný cyklus, dokud uživatel nezadá platný vstup
+            try:
+                vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
+                break  # Pokud uživatel zadal platný vstup, ukonči cyklus
+            except ValueError:
+                print("Chyba: Zadali jste neplatný vstup, musí to být nějaké číslo. Zkuste to znovu.")
+        #vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
         priklad2 = Priklad(nahrazene[cisilko],vysledky[cisilko])
         print(priklad2.porovnani(vysledek_studenta))
         cisilko+=1
