@@ -10,7 +10,16 @@ from zak import Zak
 
 def main():
     zadani = input("Zadej název souboru se zadáním (př. ulohy.txt):")
-    druh_testu = int(input("Zadej typ testu (1,2,3):"))
+    while True:
+        try:
+            druh_testu = int(input("Zadej typ testu (1,2,3):"))
+            if 0 < druh_testu < 4:
+                break
+            else:
+                print("Tento typ není, zkus jinak.")
+                continue
+        except ValueError:
+            print("Zadali jste neplatný vstup, zkus znovu.")
     jmeno = input("Zadej své jméno:")
     prijmeni = input("Zadej své přijmení:")
     data = Databaze(zadani,druh_testu)
