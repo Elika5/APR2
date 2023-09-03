@@ -1,6 +1,6 @@
 1. Jaký je objem jehlanu o stranách [neznama3] a [neznama3] o  výšce [neznama2]?
 2. [neznama2] je 100%. Kolik procent je [neznama2]?
-3. Z čísel [cisla] vypočítej modus.
+3. Z čísel [cisla] vypočítej medián.
 4. Vypočítej skalární součin vektorů [vektor], [vektor].
 5. Vypočítej [neznama3]-tý člen geometrické řady s krokem [neznama] s prvním členem [neznama].
 1. Vypočítej derivaci funkce x² + sin(2x) v bodě [neznama2].

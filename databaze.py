@@ -4,6 +4,7 @@ import numpy as np
 import statistics
 import math
 import sympy
+import sys
 
 class Databaze:
     def __init__(self,soubor,typ_testu):
@@ -32,8 +33,10 @@ class Databaze:
                 text2 = [radek.strip() for radek in text]
                 return text2
         except FileNotFoundError:
-            print(f"Soubor {self.soubor} nebyl nalezen.")
-            return []
+            print(f"Soubor {self.soubor} nebyl nalezen, spusť znovu s jiným názvem souboru.")
+            sys.exit()
+
+            
 
     def vyber_prikladu(self):
         radky = self.otevreni_souboru()
@@ -66,7 +69,7 @@ class Nahrazeni:
                 self.hodnoty.append(hodnota1)
                 return str(hodnota1)
             elif tag == "neznama2":
-                hodnota2 = random.randint(0, 500)
+                hodnota2 = random.randint(0, 300)
                 self.hodnoty.append(hodnota2)
                 return str(hodnota2)
             elif tag == "neznama3":
@@ -119,7 +122,7 @@ class Vysledek:
         if self.typ_testu == 1:
             vysledek1 = (self.hodnoty[0]*self.hodnoty[1]*self.hodnoty[2])/3
             vysledek2 = (self.hodnoty[4]*100)/self.hodnoty[3]
-            vysledek3 = statistics.mode(self.hodnoty[5])
+            vysledek3 = statistics.median(self.hodnoty[5])
             vysledek4 = np.dot(self.hodnoty[6],self.hodnoty[7])
             vysledek5 = self.hodnoty[10]*self.hodnoty[9]**(self.hodnoty[8]-1)
             return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
@@ -141,4 +144,5 @@ class Vysledek:
             return zaokrouhleni(vysledek1, vysledek2, vysledek3, vysledek4, vysledek5)
         else:
             pass
+        
      

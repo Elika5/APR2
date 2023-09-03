@@ -9,25 +9,14 @@ class Priklad:
     @property
     def vysledek(self):
         return self._vysledek
-    @vysledek.setter
-    def vysledek(self, novy_vysledek):
-        self._vysledek = novy_vysledek
-
-    @property
-    def uspesnost(self):
-        return self._uspesnost
-    @uspesnost.setter
-    def uspesnost(self, hodnota):
-        if not isinstance(hodnota, int):
-            raise ValueError("Uspesnost musí být celé číslo")
-        self._uspesnost = hodnota
+    
 
     def porovnani(self,vysledek_uzivatele):
         if self._vysledek == vysledek_uzivatele:
            self._uspesnost += 1
+           return "Správný výsledek."
         else:
-            print("špatně")
+            return "Špatný výsledek"
 
-    @classmethod
-    def vytvor_priklad(cls, zadani, vysledek):
-        return cls(zadani, vysledek)
+    def ziskat_uspesnost(self):
+        return self._uspesnost

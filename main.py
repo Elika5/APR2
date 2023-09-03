@@ -4,6 +4,7 @@ import numpy as np
 import statistics
 import math
 import sympy
+import sys
 from databaze import Databaze, Nahrazeni, Vysledek
 from priklad import Priklad
 from zak import Zak
@@ -20,10 +21,10 @@ def main():
                 continue
         except ValueError:
             print("Zadali jste neplatný vstup, zkus znovu.")
-    jmeno = input("Zadej své jméno:")
-    prijmeni = input("Zadej své přijmení:")
     data = Databaze(zadani,druh_testu)
     data.vyber_prikladu()
+    jmeno = input("Zadej své jméno:")
+    prijmeni = input("Zadej své přijmení:")
     radky = data.radky
     text = Nahrazeni(radky)
     nahrazene = text.nahrazeni()
@@ -35,17 +36,16 @@ def main():
     print(vysledky)
     for priklad in nahrazene:
         print(priklad)
-        while True:  # Nekonečný cyklus, dokud uživatel nezadá platný vstup
+        while True: 
             try:
                 vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
-                break  # Pokud uživatel zadal platný vstup, ukonči cyklus
+                break  
             except ValueError:
                 print("Chyba: Zadali jste neplatný vstup, musí to být nějaké číslo. Zkuste to znovu.")
-        #vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
         priklad2 = Priklad(nahrazene[cisilko],vysledky[cisilko])
         print(priklad2.porovnani(vysledek_studenta))
-        cisilko+=1
-        uspech += priklad2.uspesnost
+        cisilko += 1
+        uspech += priklad2.ziskat_uspesnost()
     student.prace_se_souborem(uspech)
     print(f"Získal jsi {student.ziskat_znamku()} a měl jsi {uspech}/5 bodů.")
 

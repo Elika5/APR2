@@ -65,3 +65,5 @@ class Zak:
     
     def ziskat_znamku(self):
         return self._znamka
+    
+    
