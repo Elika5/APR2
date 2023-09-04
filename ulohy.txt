@@ -12,4 +12,4 @@
 2. Vypočítej obsah kruhu s poloměrem [neznama].
 3. Součet čísel [neznama2] a [neznama2] odečti od jejich součinu.
 4. Kolik [neznama2] mᶟ  je to litrů?
-5. Jaký je objem válce o průměru [neznama2] a výšce [neznama2]?
+5. Jaký je objem válce o průměru [neznama3] a výšce [neznama3]?
