@@ -1,10 +1,3 @@
-znamky = {
-    tuple(range(5,6)):1,
-    tuple(range(4,5)):2,
-    tuple(range(3,4)):3,
-    tuple(range(2,3)):4,
-    tuple(range(0,2)):5,
-}
 
 class Zak:
     def __init__(self,jmeno,prijmeni):
@@ -13,7 +6,6 @@ class Zak:
         self._soubor_nazev = f"{jmeno}_{prijmeni}.txt"
         self._znamky = {}
         self._znamka = 0
-        self.rozsah = 1
 
     @property
     def jmeno(self):
@@ -49,7 +41,11 @@ class Zak:
             znamka4 = range(2,3)
             znamka5 = range(0,2)
             znamky = {znamka1:1,znamka2:2,znamka3:3,znamka4:4,znamka5:5}
-            self._znamka = znamky[nove_data]
+            vybrane_cislo = None
+            for znamka_rozsah, cislo in znamky.items():
+                if nove_data in znamka_rozsah:
+                    vybrane_cislo = cislo
+            self._znamka = vybrane_cislo
             if obsah:
                 soubor.write(f"{obsah}, {self.znamka}:{nove_data}/5")
             else:

@@ -1,11 +1,6 @@
-import re
-import random
-import numpy as np
-import statistics
-import math
-import sympy
-import sys
-from databaze import Databaze, Nahrazeni, Vysledek
+from databaze import Databaze
+from nahrazeni import Nahrazeni
+from vysledek import Vysledek
 from priklad import Priklad
 from zak import Zak
 
@@ -31,7 +26,7 @@ def main():
     vysledky = Vysledek(text.hodnoty,druh_testu)
     vysledky = vysledky.vysledek()
     student = Zak(jmeno,prijmeni)
-    cisilko = 0
+    postup = 0
     uspech = 0
     print(vysledky)
     for priklad in nahrazene:
@@ -42,9 +37,9 @@ def main():
                 break  
             except ValueError:
                 print("Chyba: Zadali jste neplatný vstup, musí to být nějaké číslo. Zkuste to znovu.")
-        priklad2 = Priklad(nahrazene[cisilko],vysledky[cisilko])
+        priklad2 = Priklad(nahrazene[postup],vysledky[postup])
         print(priklad2.porovnani(vysledek_studenta))
-        cisilko += 1
+        postup += 1
         uspech += priklad2.ziskat_uspesnost()
     student.prace_se_souborem(uspech)
     print(f"Získal jsi {student.ziskat_znamku()} a měl jsi {uspech}/5 bodů.")
