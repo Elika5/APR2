@@ -3,9 +3,11 @@ from nahrazeni import Nahrazeni
 from vysledek import Vysledek
 from priklad import Priklad
 from zak import Zak
+from konfigura import config
 
 def main():
     zadani = input("Zadej název souboru se zadáním (př. ulohy.txt):")
+    """
     while True:
         try:
             druh_testu = int(input("Zadej typ testu (1,2,3):"))
@@ -15,22 +17,22 @@ def main():
                 print("Tento typ není, zkus jinak.")
                 continue
         except ValueError:
-            print("Zadali jste neplatný vstup, zkus znovu.")
-    data = Databaze(zadani,druh_testu)
+            print("Zadali jste neplatný vstup, zkus znovu.")"""
+    data = Databaze(zadani)
     data.vyber_prikladu()
     jmeno = input("Zadej své jméno:")
     prijmeni = input("Zadej své přijmení:")
     radky = data.radky
     text = Nahrazeni(radky)
     nahrazene = text.nahrazeni()
-    vysledky = Vysledek(text.hodnoty,druh_testu)
+    vysledky = Vysledek(text.hodnoty)
     vysledky = vysledky.vysledek()
     student = Zak(jmeno,prijmeni)
     postup = 0
     uspech = 0
     print(vysledky)
     for priklad in nahrazene:
-        print(priklad)
+        print(f"{postup}. {priklad}")
         while True: 
             try:
                 vysledek_studenta = float(input("Zadej svůj výsledek na tento příklad:"))
@@ -42,7 +44,8 @@ def main():
         postup += 1
         uspech += priklad2.ziskat_uspesnost()
     student.prace_se_souborem(uspech)
-    print(f"Získal jsi {student.ziskat_znamku()} a měl jsi {uspech}/5 bodů.")
+    pocet = config["pocet_uloh"]
+    print(f"Získal jsi {student.ziskat_znamku()} a měl jsi {uspech}/{pocet} bodů.")
 
 if __name__ == "__main__":
     main()

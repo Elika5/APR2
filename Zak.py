@@ -53,11 +53,12 @@ class Zak:
                 if nove_data in znamka_rozsah:
                     vybrane_cislo = cislo
             self._znamka = vybrane_cislo
+            pocet = config["pocet_uloh"]
             if obsah:
-                soubor.write(f"{obsah}, {self.znamka}:{nove_data}/5")
+                soubor.write(f"{obsah}, {self.znamka}:{nove_data}/{pocet}")
             else:
-                soubor.write(f"{self._jmeno} {self._prijmeni} - znamky a statistiky\n")
-                soubor.write(f"{self._znamka}:{nove_data}/5")
+                soubor.write(f"{self._jmeno} {self._prijmeni} - známky a statistiky\n")
+                soubor.write(f"{self._znamka}:{nove_data}/{pocet}")
         self.udaje = self.obsah_na_slovnik(obsah)
     
                 

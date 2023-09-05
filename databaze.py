@@ -1,9 +1,9 @@
 import sys
+from konfigura import config
 
 class Databaze:
-    def __init__(self,soubor,typ_testu):
+    def __init__(self,soubor):
         self._soubor = soubor
-        self._typ_testu = typ_testu
         self.radky = []
 
     @property
@@ -13,19 +13,12 @@ class Databaze:
     def soubor(self, novy_soubor):
         self._soubor = novy_soubor
 
-    @property
-    def typ_testu(self):
-        return self._typ_testu
-    @typ_testu.setter
-    def typ_testu(self, novy_typ_testu):
-        self._typ_testu = novy_typ_testu
-
     def otevreni_souboru(self):
         try:
             with open(self.soubor, "r", encoding="UTF-8") as soubor:
                 text = soubor.readlines()
-                text2 = [radek.strip() for radek in text]
-                return text2
+                vysledne_zadani = [radek.strip() for radek in text]
+                return vysledne_zadani
         except FileNotFoundError:
             print(f"Soubor {self.soubor} nebyl nalezen, spusť znovu s jiným názvem souboru.")
             sys.exit()
@@ -34,7 +27,7 @@ class Databaze:
 
     def vyber_prikladu(self):
         radky = self.otevreni_souboru()
-        self.radky.extend(radky[5*self.typ_testu-5:5*self.typ_testu])
+        self.radky.extend(radky[0:config["pocet_uloh"]])
 
 
    
