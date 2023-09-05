@@ -5,20 +5,8 @@ from priklad import Priklad
 from zak import Zak
 from konfigura import config
 
-def main():
-    zadani = input("Zadej název souboru se zadáním (př. ulohy.txt):")
-    """
-    while True:
-        try:
-            druh_testu = int(input("Zadej typ testu (1,2,3):"))
-            if 0 < druh_testu < 4:
-                break
-            else:
-                print("Tento typ není, zkus jinak.")
-                continue
-        except ValueError:
-            print("Zadali jste neplatný vstup, zkus znovu.")"""
-    data = Databaze(zadani)
+def main():    
+    data = Databaze(config["soubor_zadani"])
     data.vyber_prikladu()
     jmeno = input("Zadej své jméno:")
     prijmeni = input("Zadej své přijmení:")
@@ -31,6 +19,7 @@ def main():
     postup = 0
     uspech = 0
     print(vysledky)
+    print("Výsledky zadávej se zaokrouhlením na dvě desetinná místa.")
     for priklad in nahrazene:
         print(f"{postup}. {priklad}")
         while True: 

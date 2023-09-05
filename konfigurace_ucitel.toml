@@ -1,5 +1,17 @@
 
-pocet_uloh = 10 
+pocet_uloh = 7
+soubor_zadani = "ulohy.txt"
+
+znamka1_min = 6
+znamka1_max = 7
+znamka2_min = 4
+znamka2_max = 5
+znamka3_min = 3
+znamka3_max = 3
+znamka4_min = 1
+znamka4_max = 2
+znamka5_min = 0
+znamka5_max = 0
 
 neznama_min = -11
 neznama_max = 11
@@ -16,15 +28,3 @@ cisla_pocet = 7
 vektor_min = -100
 vektor_max = 100
 vektor_pocet = 5
-
-znamka1_min = 5
-znamka1_max = 5
-znamka2_min = 4
-znamka2_max = 4
-znamka3_min = 3
-znamka3_max = 3
-znamka4_min = 2
-znamka4_max = 2
-znamka5_min = 0
-znamka5_max = 1
-

@@ -20,7 +20,7 @@ class Databaze:
                 vysledne_zadani = [radek.strip() for radek in text]
                 return vysledne_zadani
         except FileNotFoundError:
-            print(f"Soubor {self.soubor} nebyl nalezen, spusť znovu s jiným názvem souboru.")
+            print(f"Soubor {self.soubor} nebyl nalezen, byl zadán špatný soubor.")
             sys.exit()
 
             

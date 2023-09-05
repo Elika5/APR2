@@ -39,7 +39,7 @@ class Vysledek:
             self.vysledky['vysledek7'] = (self.hodnoty[12]-self.hodnoty[13])*(self.hodnoty[12]/self.hodnoty[13])
             self.vysledky['vysledek8'] = statistics.median(self.hodnoty[14])
             self.vysledky['vysledek9'] = np.linalg.det(self.hodnoty[15])
-            self.vysledky['vysledek10'] = math.sqrt(math.sqrt(self.hodnoty[16]))*math.sqrt(math.sqrt(self.hodnoty[16]))
+            self.vysledky['vysledek10'] = (self.hodnoty[16]**2)/2
             self.vysledky['vysledek11'] = np.mean(self.hodnoty[17])
             self.vysledky['vysledek12'] = math.pi*self.hodnoty[18]*self.hodnoty[18]
             self.vysledky['vysledek13'] = (self.hodnoty[19]+self.hodnoty[20])-(self.hodnoty[19]*self.hodnoty[20])
