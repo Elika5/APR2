@@ -1,3 +1,4 @@
+from konfigura import config
 
 class Zak:
     def __init__(self,jmeno,prijmeni):
@@ -10,10 +11,16 @@ class Zak:
     @property
     def jmeno(self):
         return self._jmeno
+    @jmeno.setter
+    def jmeno(self, nove_jmeno):
+        self._jmeno = nove_jmeno
 
     @property
     def prijmeni(self):
         return self._prijmeni
+    @prijmeni.setter
+    def prijmeni(self, nove_prijmeni):
+        self._prijmeni = nove_prijmeni
 
     @property
     def soubor_nazev(self):
@@ -35,11 +42,11 @@ class Zak:
             obsah = ""
 
         with open(self._soubor_nazev, "w", encoding="UTF-8") as soubor:
-            znamka1 = range(5,6)
-            znamka2 = range(4,5)
-            znamka3 = range(3,4)
-            znamka4 = range(2,3)
-            znamka5 = range(0,2)
+            znamka1 = range(config["znamka1_min"],config["znamka1_max"]+1)
+            znamka2 = range(config["znamka2_min"],config["znamka2_max"]+1)
+            znamka3 = range(config["znamka3_min"],config["znamka3_max"]+1)
+            znamka4 = range(config["znamka4_min"],config["znamka4_max"]+1)
+            znamka5 = range(config["znamka5_min"],config["znamka5_max"]+1)
             znamky = {znamka1:1,znamka2:2,znamka3:3,znamka4:4,znamka5:5}
             vybrane_cislo = None
             for znamka_rozsah, cislo in znamky.items():
