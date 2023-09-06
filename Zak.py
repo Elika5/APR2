@@ -1,4 +1,5 @@
-from konfigura import config
+from konfigura import nacti_konfiguraci
+config = nacti_konfiguraci()
 
 class Zak:
     def __init__(self,jmeno,prijmeni):

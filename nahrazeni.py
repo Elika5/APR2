@@ -1,7 +1,8 @@
 import re
 import random
 import numpy as np
-from konfigura import config
+from konfigura import nacti_konfiguraci
+config = nacti_konfiguraci()
 
 class Nahrazeni:
     def __init__(self,ulohy):

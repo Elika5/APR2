@@ -3,7 +3,8 @@ from nahrazeni import Nahrazeni
 from vysledek import Vysledek
 from priklad import Priklad
 from zak import Zak
-from konfigura import config
+from konfigura import nacti_konfiguraci
+config = nacti_konfiguraci()
 
 def main():    
     data = Databaze(config["soubor_zadani"])

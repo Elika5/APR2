@@ -1,7 +1,6 @@
 import math
 import numpy as np
 import statistics
-import math
 import sympy
 
 class Vysledek:

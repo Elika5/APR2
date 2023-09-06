@@ -1,5 +1,6 @@
 import sys
-from konfigura import config
+from konfigura import nacti_konfiguraci
+config = nacti_konfiguraci()
 
 class Databaze:
     def __init__(self,soubor):
